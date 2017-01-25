@@ -65,7 +65,7 @@ def save_midi(midi):
 def play_midi(midi):
 	current_dir = os.path.dirname(os.path.abspath(__file__))
 	mid_path = current_dir + "/output.mid"
-	
+
 	os.system("timidity " + mid_path + " >/dev/null")
 
 def get_runs_from_melody(melody):
@@ -98,7 +98,7 @@ def get_runs_from_melody(melody):
 
 	return runs
 
-def check_melody(m, type, verbose = False):
+def check_melody(m, type, verbose = True):
 	intervals = [m[i+1] - m[i] for i in range(len(m) - 1)]
 	directions = [sign(intervals[i]) for i in range(len(intervals))]
 	leaps = [x for x in intervals if abs(x) > Step]
@@ -417,4 +417,3 @@ def generate_melody(server = False):
 if __name__ == "__main__":
 	while True:
 		generate_melody()
-

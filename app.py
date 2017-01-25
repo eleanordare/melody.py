@@ -21,10 +21,10 @@ def hello():
 			total_time_elapsed += time_elapsed
 	# print lower_voice
 	# print upper_voice
-	return render_template('play_midi.html', 
+	return render_template('play_midi.html',
 		filename=filename,
-		lowerVoice=lower_voice, 
-		upperVoice=upper_voice, 
+		lowerVoice=lower_voice,
+		upperVoice=upper_voice,
 		keySignature=key_signature,
 		timeElapsed=total_time_elapsed
 	)
